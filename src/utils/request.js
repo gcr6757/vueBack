@@ -1,6 +1,5 @@
 //封装axios
 import axios from 'axios'
-import nProgress from 'nprogress'
 
 // 全局的loading  顶部的蓝条进度
 import Nprogress from 'nprogress'
@@ -51,7 +50,7 @@ request.interceptors.response.use(function (response) {
   // Any status code that lie within the range of 2xx cause this function to trigger
   // Do something with response data
   Nprogress.done()
-  
+
   return response;
 }, function (error) {
   // Any status codes that falls outside the range of 2xx cause this function to trigger

@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+
+  <% if(htmlWebpackPlugin.options.isProd){ %>
+  <!-- nprogress的样式文件 -->
+  <link href="https://cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <!-- 富文本编辑器的样式表 -->
+  <link href="https://cdn.bootcdn.net/ajax/libs/quill/1.3.4/quill.bubble.min.css" rel="stylesheet">
+  <link href="https://cdn.bootcdn.net/ajax/libs/quill/1.3.4/quill.core.min.css" rel="stylesheet">
+  <link href="https://cdn.bootcdn.net/ajax/libs/quill/1.3.4/quill.snow.min.css" rel="stylesheet">
+
+  <!-- element-ui外部cdn加载 -->
+  <link href="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/theme-chalk/index.css" rel="stylesheet">
+
+
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.5.22/vue.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue-router/3.2.0/vue-router.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.18.0/axios.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/echarts/4.0.2/echarts.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  <!-- 富文本编辑器的js -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/quill/1.3.4/quill.min.js"></script>
+
+  <!-- element-ui外部cdn加载 -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/index.js"></script>
+
+  <% } %>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+      Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
 </html>

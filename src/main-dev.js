@@ -20,8 +20,16 @@ import './assets/fonts/iconfont.css'
 //   console.log(res);
 // }
 
+
+//全局的时间过滤器  ,这里的参数v代指使用该过滤器的时间对象
+// Vue.filter('fmtdate', (v) => {
+//   return moment(v).format('YYYY-MM-DD')
+// })
+
 //注册全局的富文本编辑器
 import VueqQillEditor from 'vue-quill-editor'
+
+//这里面的样式文件全部通过cdn加载在public里面的index文件中
 
 import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
@@ -39,19 +47,19 @@ Vue.filter('dataFormat', function (originVal) {
   const dt = new Date(originVal)
 
   const y = dt.getFullYear()
-  const m = (dt.getMonth() + 1 + '').padStart(2,'0')
+  const m = (dt.getMonth() + 1 + '').padStart(2, '0')
   const d = (dt.getDate() + '').padStart(2, '0')
-  
-  const hh = (dt.getHours() + '').padStart(2,'0')
-  const mm = (dt.getMinutes() + '').padStart(2,'0')
+
+  const hh = (dt.getHours() + '').padStart(2, '0')
+  const mm = (dt.getMinutes() + '').padStart(2, '0')
   const ss = (dt.getSeconds() + '').padStart(2, '0')
-  
+
   return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
 })
 
 
 //按需引入element-ui
-import { Input, Button, Avatar, Icon, Form, FormItem, Container, Header, Aside, Main, Collapse, CollapseItem, Menu, Submenu, MenuItem, Row, Dropdown, DropdownItem, DropdownMenu, Breadcrumb, BreadcrumbItem, Card, Popover, Table, TableColumn, Switch, Tooltip, Pagination, Dialog, Tag, Col, Tree, Select, Option, Cascader,Alert, Tabs, TabPane, Steps, Step, Checkbox, CheckboxGroup, Upload, Timeline, TimelineItem } from 'element-ui'
+import { Input, Button, Avatar, Icon, Form, FormItem, Container, Header, Aside, Main, Collapse, CollapseItem, Menu, Submenu, MenuItem, Row, Dropdown, DropdownItem, DropdownMenu, Breadcrumb, BreadcrumbItem, Card, Popover, Table, TableColumn, Switch, Tooltip, Pagination, Dialog, Tag, Col, Tree, Select, Option, Cascader, Alert, Tabs, TabPane, Steps, Step, Checkbox, CheckboxGroup, Upload, Timeline, TimelineItem } from 'element-ui'
 
 Vue.use(Input)
   .use(Button)
